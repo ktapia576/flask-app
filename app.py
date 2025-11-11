@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 from markupsafe import escape
 
 app = Flask(__name__)
@@ -11,3 +11,8 @@ def home():
 @app.route('/hello')
 def hello():
     return 'Hello, World'
+
+@app.route('/hello/')
+@app.route('/hello/<name>')
+def hello(name=None):
+    return render_template('hello.html', person=name)
