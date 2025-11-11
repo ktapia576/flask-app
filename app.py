@@ -7,3 +7,7 @@ app = Flask(__name__)
 def home():
     name = request.args.get("name", "Flask")
     return f"Hello, {escape(name)}!"
+
+@app.route('/hello')
+def hello():
+    return 'Hello, World'
