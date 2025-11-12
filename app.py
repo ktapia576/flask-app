@@ -8,8 +8,8 @@ def home():
     name = request.args.get("name", "Flask")
     return f"Hello, {escape(name)}!"
 
-@app.route('/hello')
-def hello():
+@app.route('/about')
+def about():
     return 'Hello, World'
 
 @app.route('/hello/')
