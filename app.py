@@ -3,6 +3,16 @@ from markupsafe import escape
 
 app = Flask(__name__)
 
+# -----------------------------
+# Mock user data (stored in code)
+# -----------------------------
+mock_user = {
+    "username": "ktapia",
+    "password": "pbkdf2:sha256:600000$0ziqO3u7sMmb1vlt$3990d36b8af49a0deedbb6918bb3b1a15fe75b60d4f040814cd22c775e8ff72c"   
+    # hashed password
+}
+
+
 @app.route("/")
 def home():
     name = request.args.get("name", "Flask")
